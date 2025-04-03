@@ -1,0 +1,29 @@
+  body {
+  margin: 0;
+  font-family: 'Heebo', sans-serif;
+}
+
+.allHome{
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+}
+.title1 {
+    font-size: 64px;
+    font-weight: 600;
+    color: white;
+    animation: fadeInDown 1s ease forwards;
+    opacity: 0;
+    text-align: center;
+  }
+  .title2{
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    animation: fadeInDown 1s ease forwards;
+    opacity: 0;
+    text-align: center;
+  }
+  .phonNumber{
+    color: white;
+    font-size: 14px;
+
+  }
