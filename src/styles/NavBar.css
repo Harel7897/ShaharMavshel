@@ -8,6 +8,8 @@
   background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   font-family: 'Inter', sans-serif;
+  flex-wrap: wrap; /* מאפשר לרכיבי ה-navbar להתארגן מחדש על המסך */
+  justify-content: space-between; /* מאפשר גמישות במיקומים */
 }
 
 .nav-btn {
@@ -28,4 +30,30 @@
   color: #61dafb;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* התאמות עבור מסכים קטנים */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 16px; /* פחות רווחים במובייל */
+    gap: 20px; /* צמצום המרווחים בין הכפתורים */
+  }
+
+  .nav-btn {
+    font-size: 14px; /* צמצום גודל הפונט במובייל */
+    padding: 10px 20px; /* התאמת גודל הכפתור במובייל */
+  }
+}
+
+/* התאמות עבור מסכים קטנים מאוד */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 12px; /* עוד צמצום של הרווחים */
+    gap: 10px; /* צמצום נוסף של המרווחים */
+  }
+
+  .nav-btn {
+    font-size: 12px; /* הפונט מצטמצם עוד יותר */
+    padding: 8px 16px; /* התאמה לכפתור קטן יותר */
+  }
 }

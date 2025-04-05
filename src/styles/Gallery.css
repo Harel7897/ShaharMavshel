@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap');
 
-
-
 .gallery-container {
   padding: 50px 10px;
 }
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* מותאם לגודל המכשיר */
   gap: 24px;
   padding: 0 10px;
   animation: fadeIn 1.5s ease forwards;
@@ -16,14 +14,13 @@
 }
 
 .gallery-image {
-    width: 100%;
-    height: 300px; /* או 250px לפי הטעם */
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
+  width: 100%;
+  height: 250px; /* אפשר להתאים את הגובה בהתאם */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
 
 .gallery-image:hover {
   transform: scale(1.04);
@@ -50,5 +47,35 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* התאמות עבור מסכים קטנים */
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 30px 10px; /* פחות רווחים למובייל */
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* התאמה למסכים קטנים יותר */
+  }
+
+  .gallery-image {
+    height: 200px; /* צמצום הגובה במובייל */
+  }
+}
+
+/* התאמות עבור מסכים קטנים מאוד */
+@media (max-width: 480px) {
+  .gallery-container {
+    padding: 20px 10px;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* התאמה למסכים מאוד קטנים */
+  }
+
+  .gallery-image {
+    height: 180px; /* צמצום הגובה במובייל */
   }
 }

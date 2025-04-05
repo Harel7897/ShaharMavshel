@@ -1,29 +1,70 @@
-  body {
+body {
   margin: 0;
   font-family: 'Heebo', sans-serif;
 }
 
-.allHome{
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+.allHome {
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  padding: 20px; /* מוסיף רווחים פנימיים לכל האזור */
 }
-.title1 {
-    font-size: 64px;
-    font-weight: 600;
-    color: white;
-    animation: fadeInDown 1s ease forwards;
-    opacity: 0;
-    text-align: center;
-  }
-  .title2{
-    font-size: 24px;
-    font-weight: 600;
-    color: white;
-    animation: fadeInDown 1s ease forwards;
-    opacity: 0;
-    text-align: center;
-  }
-  .phonNumber{
-    color: white;
-    font-size: 14px;
 
+.title1 {
+  font-size: 64px;
+  font-weight: 600;
+  color: white;
+  animation: fadeInDown 1s ease forwards;
+  opacity: 0;
+  text-align: center;
+}
+
+.title2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  animation: fadeInDown 1s ease forwards;
+  opacity: 0;
+  text-align: center;
+}
+
+.phonNumber {
+  color: white;
+  font-size: 14px;
+  text-align: center; /* ממקם את מספר הטלפון במרכז */
+}
+
+/* התאמות רספונסיביות */
+@media (max-width: 768px) {
+  .title1 {
+    font-size: 48px; /* צמצום גודל הכותרת הגדולה במובייל */
   }
+
+  .title2 {
+    font-size: 20px; /* צמצום גודל כותרת המשנה במובייל */
+  }
+
+  .phonNumber {
+    font-size: 12px; /* צמצום גודל טקסט מספר הטלפון במובייל */
+  }
+
+  .allHome {
+    padding: 15px; /* פחות רווחים במובייל */
+  }
+}
+
+@media (max-width: 480px) {
+  .title1 {
+    font-size: 36px; /* צמצום נוסף לגודל הכותרת הגדולה */
+  }
+
+  .title2 {
+    font-size: 18px; /* צמצום נוסף לגודל כותרת המשנה */
+  }
+
+  .phonNumber {
+    font-size: 10px; /* צמצום נוסף לגודל מספר הטלפון */
+  }
+
+  .allHome {
+    padding: 10px; /* צמצום רווחים נוספים */
+  }
+}
