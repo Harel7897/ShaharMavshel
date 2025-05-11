@@ -8,8 +8,8 @@ const navigate=useNavigate();
 const gotomenu=()=>{
   navigate('/Menu')
 }
-const gotoShoppingCart=()=>{
-  navigate('/ShoppingCart')
+const gotoContact=()=>{
+  navigate('/contact')
 }
 const gotoabout=()=>{
   navigate('/About')
@@ -20,7 +20,8 @@ const gotoabout=()=>{
       <div className='navbar'>
          <button  className="nav-btn" onClick={gotoabout}>המלצות</button>
         <button  className="nav-btn" onClick={gotomenu}>תפריט</button>
-        <button  className="nav-btn" onClick={gotoShoppingCart}>הזמן אירוע</button>
+        <button  className="nav-btn" onClick={gotoContact}>צור קשר</button>
+
       </div>
        
     </div>

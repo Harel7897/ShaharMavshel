@@ -1,0 +1,155 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+/* טופס */
+.modern-form-container {
+  width: 92%;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  direction: rtl;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* כותרת */
+.modern-form-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 36px;
+  color: #fff;
+}
+
+/* קבוצת שדה */
+.input-group {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* אינפוטים */
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 18px 14px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s ease;
+  direction: rtl;
+  border-radius: 0;
+}
+
+/* פוקוס */
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  border-bottom: 2px solid #25D366;
+  outline: none;
+}
+
+/* תווית צפה */
+.input-group label {
+  position: absolute;
+  right: 14px;
+  top: 16px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+  padding: 2px 8px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  font-weight: 400;
+  pointer-events: none;
+}
+
+/* כשהשדה מלא או בפוקוס */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group select:focus + label,
+.input-group select:not([value=""]) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+  top: -12px;
+  font-size: 0.8rem;
+  color: #25D366;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 10px;
+  border-radius: 12px;
+}
+
+/* תיבת תאריך */
+.input-group input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* טקסט ארוך */
+.input-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* כפתור שליחה */
+.modern-form-container button {
+  width: 100%;
+  padding: 16px;
+  background-color: #25D366;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.15s;
+}
+
+.modern-form-container button:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.02);
+}
+
+/* אנימציית כניסה */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* מובייל */
+@media (max-width: 480px) {
+  .modern-form-container {
+    padding: 24px;
+  }
+
+  .modern-form-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .modern-form-container button {
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
