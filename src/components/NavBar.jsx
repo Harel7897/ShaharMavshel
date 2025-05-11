@@ -20,7 +20,7 @@ const gotoabout=()=>{
       <div className='navbar'>
          <button  className="nav-btn" onClick={gotoabout}>המלצות</button>
         <button  className="nav-btn" onClick={gotomenu}>תפריט</button>
-        <button  className="nav-btn" onClick={gotoShoppingCart}> עגלת הקניות </button>
+        <button  className="nav-btn" onClick={gotoShoppingCart}>הזמן אירוע</button>
       </div>
        
     </div>
