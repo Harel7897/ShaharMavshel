@@ -3,11 +3,12 @@ import "../styles/Contact.css";
 
 const Contact = () => {
   const [form, setForm] = useState({
+    username:"",
+    phonNum:"",
     date: "",
     eventType: "",
     guests: "",
-    menu: "חלבי",
-    allergies: "",
+    kashrot:"",
     notes: "",
   });
 
@@ -20,10 +21,12 @@ const Contact = () => {
 
   const handleSubmit = () => {
     const message = `📅 הזמנת אירוע:
+לקוח: ${form.username}
+טלפון: ${form.phonNum}
 תאריך: ${form.date}
 סוג אירוע: ${form.eventType}
 כמות מוזמנים: ${form.guests}
-אלרגיות: ${form.allergies || "אין"}
+כשרות :${form.kashrot }
 פרטים נוספים: ${form.notes || "אין"}
 
 📝 נשלח דרך טופס הזמנה`;
@@ -35,8 +38,9 @@ const Contact = () => {
   return (
     <div className="modern-form-container">
       <h2>הזמנת אירוע</h2>
-  
-      <div className="input-group">
+
+
+ <div className="input-group">
         <input
           name="date"
           type="date"
@@ -46,6 +50,33 @@ const Contact = () => {
         />
         <label htmlFor="date">תאריך האירוע</label>
       </div>
+
+      
+      <div className="input-group">
+        <input
+          name="username"
+          type="text"
+          value={form.username}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="date"> שם מלא</label>
+      </div>
+
+      <div className="input-group">
+        <input
+          name="phonNum"
+          type="text"
+          value={form.phonNum}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="date"> מספר טלפון</label>
+      </div>
+
+
+  
+     
   
       <div className="input-group">
         <input
@@ -66,17 +97,19 @@ const Contact = () => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="guests">כמות מוזמנים</label>
+        <label htmlFor="guests">כמות אנשים</label>
       </div>
   
+
       <div className="input-group">
         <input
-          name="allergies"
+          name="kashrot"
           type="text"
-          value={form.allergies}
+          value={form.kashrot}
           onChange={handleChange}
+          required
         />
-        <label htmlFor="allergies">אלרגיות (אם יש)</label>
+        <label htmlFor="guests">כשרות</label>
       </div>
   
       <div className="input-group">
@@ -86,12 +119,11 @@ const Contact = () => {
           onChange={handleChange}
           rows={4}
         />
-        <label htmlFor="notes">פרטים נוספים</label>
+        <label htmlFor="notes"> הערות/דרישות מיוחדות</label>
       </div>
   
       <button onClick={handleSubmit}>
-        שליחת ההזמנה לבית העסק
-      </button>
+שליחת ההזמנה וקבלת הצעת מחיר      </button>
     </div>
   );
   
