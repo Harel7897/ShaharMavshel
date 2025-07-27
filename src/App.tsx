@@ -1,15 +1,13 @@
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/Home.jsx';
-import Menu from './components/Menu.jsx';
-import Contact from './components/Contact.jsx';
-import About from './components/About.jsx';
-
-
+import Home from './components/Home';
+import Menu from './components/Menu';
+import Contact from './components/Contact';
+import About from './components/About';
 
 import './App.css';
+import { JSX } from 'react';
 
-function App() {
+const App = (): JSX.Element => {
   return (
     <div>
       <BrowserRouter>
@@ -18,11 +16,10 @@ function App() {
           <Route path="/Menu" element={<Menu />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/About" element={<About />} />
-         
         </Routes>
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
