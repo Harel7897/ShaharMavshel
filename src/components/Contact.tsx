@@ -1,20 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import "../styles/Contact.css";
 
-const Contact = () => {
-  const [form, setForm] = useState({
-    username:"",
-    phonNum:"",
+interface FormState {
+  username: string;
+  phonNum: string;
+  date: string;
+  eventType: string;
+  guests: string;
+  kashrot: string;
+  notes: string;
+}
+
+const Contact: React.FC = () => {
+  const [form, setForm] = useState<FormState>({
+    username: "",
+    phonNum: "",
     date: "",
     eventType: "",
     guests: "",
-    kashrot:"",
+    kashrot: "",
     notes: "",
   });
 
   const phoneNumber = "972542312663";
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
@@ -26,7 +36,7 @@ const Contact = () => {
 תאריך: ${form.date}
 סוג אירוע: ${form.eventType}
 כמות מוזמנים: ${form.guests}
-כשרות :${form.kashrot }
+כשרות :${form.kashrot}
 פרטים נוספים: ${form.notes || "אין"}
 
 📝 נשלח דרך טופס הזמנה`;
@@ -39,8 +49,7 @@ const Contact = () => {
     <div className="modern-form-container">
       <h2>הזמנת אירוע</h2>
 
-
- <div className="input-group">
+      <div className="input-group">
         <input
           name="date"
           type="date"
@@ -51,7 +60,6 @@ const Contact = () => {
         <label htmlFor="date">תאריך האירוע</label>
       </div>
 
-      
       <div className="input-group">
         <input
           name="username"
@@ -60,7 +68,7 @@ const Contact = () => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="date"> שם מלא</label>
+        <label htmlFor="username">שם מלא</label>
       </div>
 
       <div className="input-group">
@@ -71,13 +79,9 @@ const Contact = () => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="date"> מספר טלפון</label>
+        <label htmlFor="phonNum">מספר טלפון</label>
       </div>
 
-
-  
-     
-  
       <div className="input-group">
         <input
           name="eventType"
@@ -88,7 +92,7 @@ const Contact = () => {
         />
         <label htmlFor="eventType">סוג אירוע</label>
       </div>
-  
+
       <div className="input-group">
         <input
           name="guests"
@@ -99,7 +103,6 @@ const Contact = () => {
         />
         <label htmlFor="guests">כמות אנשים</label>
       </div>
-  
 
       <div className="input-group">
         <input
@@ -109,9 +112,9 @@ const Contact = () => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="guests">כשרות</label>
+        <label htmlFor="kashrot">כשרות</label>
       </div>
-  
+
       <div className="input-group">
         <textarea
           name="notes"
@@ -119,14 +122,14 @@ const Contact = () => {
           onChange={handleChange}
           rows={4}
         />
-        <label htmlFor="notes"> הערות/דרישות מיוחדות</label>
+        <label htmlFor="notes">הערות/דרישות מיוחדות</label>
       </div>
-  
+
       <button onClick={handleSubmit}>
-שליחת ההזמנה וקבלת הצעת מחיר      </button>
+        שליחת ההזמנה וקבלת הצעת מחיר
+      </button>
     </div>
   );
-  
 };
 
 export default Contact;

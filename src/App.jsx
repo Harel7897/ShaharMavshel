@@ -18,8 +18,6 @@ function App() {
           <Route path="/Menu" element={<Menu />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/About" element={<About />} />
-
-
          
         </Routes>
       </BrowserRouter>
